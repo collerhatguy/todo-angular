@@ -1,0 +1,21 @@
+@mixin coloring {
+    background-color:  hsl(235, 24%, 19%);
+    color: hsl(233, 14%, 35%);
+}
+ul {
+    @include coloring();
+    width: 50%;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+li {
+    @include coloring();
+    margin-left: 1rem;
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 100%;
+}

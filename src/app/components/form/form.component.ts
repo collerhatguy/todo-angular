@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoService } from "../../services/todo.service";
+import Todo from "../../Todo";
 
 @Component({
   selector: 'app-form',
@@ -7,11 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
   }
-  createTodo() {
-    
+  createTodo(todo: string) {
+    const newTodo: Todo = {
+      todo: todo,
+      id: Math.floor(Math.random() * 20),
+      completed: false,
+    }
+    this.todoService.addTodo(newTodo)
+  }
+  enterCheck($event: any) {
+    if ($event.keyCode === 13) this.createTodo($event.target.value);
   }
 }
