@@ -1,0 +1,51 @@
+@mixin coloring {
+    background-color:  hsl(235, 24%, 19%);
+    color: hsl(233, 14%, 35%);
+}
+form {
+    @include coloring();
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 50px;
+}
+input[type="text"] {
+    @include coloring();
+    margin-left: 1rem;
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 100%;
+}
+.checkbox-container {
+    @include coloring();
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+    }
+    input[type="checkbox"]:checked {
+        background-image: url(../../../images/icon-check.svg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+input[type="checkbox"] {
+    visibility: hidden;
+    &:checked {
+        visibility: visible;
+        background-image: url(../../../images/icon-check.svg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
