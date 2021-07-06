@@ -6,10 +6,19 @@ header {
     width: 100%;
     height: 300px;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 #dark-btn {
-    src: url(../../../images/icon-moon.svg);
+    $pic-size: 30px;
+    width: $pic-size;
+    height: $pic-size;
+    background-image: url(../../../images/icon-moon.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #dark-btn[data-dark="false"] {
-    src: url(../../../images/icon-sun.svg);
+    background-image: url(../../../images/icon-sun.svg);
 }

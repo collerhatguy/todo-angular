@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
+import { ThemeService } from "./services/theme.service";
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class AppComponent {
   title = 'TODO';
-  dark: boolean = true;
+  constructor() {
+  }
 }
