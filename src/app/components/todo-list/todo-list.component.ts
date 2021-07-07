@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThemeService } from 'src/app/services/theme.service';
 import { TodoService } from "../../services/todo.service";
 import Todo from "../../Todo";
 
@@ -10,11 +11,13 @@ import Todo from "../../Todo";
 export class TodoListComponent implements OnInit {
 
   todoList: Todo[] = [];
+  dark: boolean = true;
 
-  constructor(private todoService: TodoService) { }
+  constructor(private todoService: TodoService, private themeService: ThemeService) { }
 
   ngOnInit(): void {
     this.todoList = this.todoService.getTodoList();
+    this.dark = this.themeService.getDark();
   }
 
 }

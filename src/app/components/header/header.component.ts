@@ -13,8 +13,7 @@ export class HeaderComponent implements OnInit {
   constructor(private themeService: ThemeService) { }
 
   switchTheme() {
-    this.themeService.toggleDark()
-    this.dark = this.themeService.getDark();
+    this.dark = this.themeService.toggleDark()
   }
   ngOnInit(): void {
     this.dark = this.themeService.getDark()

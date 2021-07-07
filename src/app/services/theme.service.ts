@@ -9,6 +9,7 @@ export class ThemeService {
   constructor() { }
   toggleDark() {
     this.dark = !this.dark;
+    return this.dark;
   }
   getDark() {
     return this.dark;
