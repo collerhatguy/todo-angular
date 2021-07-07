@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FormComponent } from './components/form/form.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { TodoComponent } from './components/todo/todo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FormComponent,
-    TodoListComponent
+    TodoListComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule, FormsModule

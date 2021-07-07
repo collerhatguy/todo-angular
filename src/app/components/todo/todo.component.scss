@@ -6,15 +6,18 @@
     background-color:   hsl(0, 0%, 98%);
     color: hsl(235, 19%, 35%);
 }
-ul {
+li {
     @include coloringDark();
-    width: 50%;
-    margin: 1rem auto;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: column;
+    list-style: none;
+    outline: none;
+    $checkbox-size: 50px;
+    padding-left: $checkbox-size;
+    height: 300px;
+    width: 100%;
+    display: inline-block;
+    border-bottom: 1px solid hsl(235, 19%, 35%);
     &[data-dark="false"] {
         @include coloringLight();
+        border-bottom-color: hsl(234, 39%, 85%);
     }
 }
