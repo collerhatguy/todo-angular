@@ -11,13 +11,13 @@ import Todo from "../../Todo";
 export class TodoListComponent implements OnInit {
 
   todoList: Todo[] = [];
-  dark: boolean = true;
+  dark!: boolean;
 
   constructor(private todoService: TodoService, private themeService: ThemeService) { }
 
   ngOnInit(): void {
     this.todoList = this.todoService.getTodoList();
-    this.dark = this.themeService.getDark();
+    this.themeService.getDark().subscribe((value) => this.dark = value);
   }
 
 }

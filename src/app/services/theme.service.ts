@@ -4,12 +4,11 @@ import { Observable, of } from "rxjs";
   providedIn: 'root'
 })
 export class ThemeService {
-  dark: boolean = true;
+  dark: Observable<boolean>= of(true);
 
   constructor() { }
   toggleDark() {
-    this.dark = !this.dark;
-    return this.dark;
+    this.dark = of(!this.dark);
   }
   getDark() {
     return this.dark;
