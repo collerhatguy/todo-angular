@@ -5,7 +5,23 @@ import Todo from "../Todo";
   providedIn: 'root'
 })
 export class TodoService {
-  TodoList: Todo[] = [];
+  TodoList: Todo[] = [
+    {
+      id: 1,
+      todo: "stuff",
+      completed: false
+    },
+    {
+      id: 1,
+      todo: "stuff",
+      completed: false
+    },
+    {
+      id: 1,
+      todo: "stuff",
+      completed: false
+    },
+];
   constructor() { }
 
   getTodoList() {

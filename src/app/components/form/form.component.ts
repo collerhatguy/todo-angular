@@ -9,19 +9,20 @@ import Todo from "../../Todo";
 })
 export class FormComponent implements OnInit {
 
+  todo: string = "";
   constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
   }
-  createTodo(todo: string) {
+  createTodo() {
     const newTodo: Todo = {
-      todo: todo,
+      todo: this.todo,
       id: Math.floor(Math.random() * 20),
       completed: false,
     }
     this.todoService.addTodo(newTodo)
   }
-  enterCheck($event: any) {
-    if ($event.keyCode === 13) this.createTodo($event.target.value);
-  }
+  // enterCheck($event: any) {
+  //   if ($event.keyCode === 13) this.createTodo($event.target.value);
+  // }
 }
