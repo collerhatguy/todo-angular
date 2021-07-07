@@ -1,5 +1,10 @@
-<app-header [title]="title"></app-header>
+<app-header 
+[title]="title" 
+[dark]="dark"
+(onThemeChange)="changeTheme()"></app-header>
 <main>
-    <app-form></app-form>
-    <app-todo-list></app-todo-list>
+    <app-form
+    [dark]="dark"></app-form>
+    <app-todo-list
+    [dark]="dark"></app-todo-list>
 </main>

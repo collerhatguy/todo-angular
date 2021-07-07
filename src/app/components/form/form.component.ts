@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { TodoService } from "../../services/todo.service";
 import Todo from "../../Todo";
 
@@ -8,7 +8,7 @@ import Todo from "../../Todo";
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-
+  @Input() dark: boolean = true;
   todo: string = "";
   constructor(private todoService: TodoService) { }
 
@@ -22,7 +22,4 @@ export class FormComponent implements OnInit {
     }
     this.todoService.addTodo(newTodo)
   }
-  // enterCheck($event: any) {
-  //   if ($event.keyCode === 13) this.createTodo($event.target.value);
-  // }
 }

@@ -1,5 +1,7 @@
 
-<form (onsubmit)="createTodo()" > 
+<form 
+[attr.data-dark]="dark"
+(onsubmit)="createTodo()" > 
     <!-- <div class="checkbox-container">
         <label for="check">
             <input 

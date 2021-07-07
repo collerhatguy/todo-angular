@@ -1,26 +1,33 @@
-@mixin coloring {
+@mixin coloringDark {
     background-color:  hsl(235, 24%, 19%);
     color: hsl(233, 14%, 35%);
 }
+@mixin coloringLight {
+    background-color:  hsl(236, 33%, 92%);
+    color: hsl(235, 19%, 35%);
+}
 form {
-    @include coloring();
+    @include coloringDark();
     width: 50%;
     margin: 0 auto;
     display: flex;
     justify-content: start;
     align-items: center;
     height: 50px;
+    &[data-dark="false"] input[type="text"] {
+        @include coloringLight();
+    }
 }
 input[type="text"] {
-    @include coloring();
-    margin-left: 1rem;
+    @include coloringDark();
+    padding-left: 1rem;
     border: none;
     outline: none;
     height: 100%;
     width: 100%;
 }
 .checkbox-container {
-    @include coloring();
+    @include coloringDark();
     margin-left: 1rem;
     display: flex;
     justify-content: center;

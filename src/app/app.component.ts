@@ -6,7 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'TODO';
+  title: string = 'TODO';
+  dark: boolean = true;
   constructor() {
+  }
+  changeTheme() {
+    this.dark = !this.dark;
   }
 }

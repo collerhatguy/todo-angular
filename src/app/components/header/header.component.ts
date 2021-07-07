@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ThemeService } from "../../services/theme.service";
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,15 +7,15 @@ import { ThemeService } from "../../services/theme.service";
 })
 export class HeaderComponent implements OnInit {
   @Input() title: string = "";
-  dark!: boolean;
+  @Output() onThemeChange = new EventEmitter();
+  @Input() dark: boolean = true;
 
-  constructor(private themeService: ThemeService) { }
+  constructor() { }
 
   switchTheme() {
-    this.dark = this.themeService.toggleDark()
+    this.onThemeChange.emit()
   }
   ngOnInit(): void {
-    this.dark = this.themeService.getDark()
   }
 
 }
