@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import Todo from "./Todo";
 
 @Component({
-  selector: 'app-root',
+  selector: 'body',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

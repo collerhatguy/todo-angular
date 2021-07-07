@@ -1,9 +1,9 @@
 @mixin coloringDark {
     background-color:  hsl(235, 24%, 19%);
-    color: hsl(233, 14%, 35%);
+    color: hsl(234, 39%, 85%);
 }
 @mixin coloringLight {
-    background-color:   hsl(236, 33%, 92%);
+    background-color:   hsl(0, 0%, 98%);
     color: hsl(235, 19%, 35%);
 }
 ul {
@@ -17,14 +17,16 @@ ul {
     flex-direction: column;
     &[data-dark="false"] li {
         @include coloringLight();
+        border-bottom-color: hsl(234, 39%, 85%); 
     }
 }
 li {
     @include coloringDark();
     padding: 1rem;
-    border: none;
+    border-bottom: 1px solid hsl(235, 19%, 35%);
     list-style: none;
     outline: none;
     height: 300px;
     width: 100%;
+
 }
