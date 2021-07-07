@@ -1,7 +1,6 @@
 
 <form 
-[attr.data-dark]="dark"
-(onsubmit)="createTodo()" > 
+[attr.data-dark]="dark" > 
     <!-- <div class="checkbox-container">
         <label for="check">
             <input 
@@ -17,4 +16,7 @@
     id="todo-input"
     [(ngModel)]="todo" 
     />
+    <button 
+    (click)="createTodo()"
+    type="submit">Submit</button>
 </form>

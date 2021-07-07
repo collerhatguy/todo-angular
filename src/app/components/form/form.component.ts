@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { TodoService } from "../../services/todo.service";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import Todo from "../../Todo";
 
 @Component({
@@ -9,17 +8,21 @@ import Todo from "../../Todo";
 })
 export class FormComponent implements OnInit {
   @Input() dark: boolean = true;
+  @Input() TodoList!: Todo[];
+  @Output() addTodo: EventEmitter<Todo> = new EventEmitter();
   todo: string = "";
-  constructor(private todoService: TodoService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
   createTodo() {
+    if (!this.todo) return;
     const newTodo: Todo = {
       todo: this.todo,
       id: Math.floor(Math.random() * 20),
       completed: false,
     }
-    this.todoService.addTodo(newTodo)
+    this.addTodo.emit(newTodo);
+    this.todo = "";
   }
 }

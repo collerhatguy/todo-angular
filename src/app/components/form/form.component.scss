@@ -14,9 +14,18 @@ form {
     justify-content: start;
     align-items: center;
     height: 50px;
-    &[data-dark="false"] input[type="text"] {
+    &[data-dark="false"] {
         @include coloringLight();
     }
+    &[data-dark="false"] input[type="text"], button {
+        @include coloringLight();
+        &:focus {
+            @include coloringLight();
+        }
+    }
+}
+button {
+    @include coloringDark();
 }
 input[type="text"] {
     @include coloringDark();

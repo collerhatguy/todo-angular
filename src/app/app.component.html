@@ -4,7 +4,10 @@
 (onThemeChange)="changeTheme()"></app-header>
 <main>
     <app-form
-    [dark]="dark"></app-form>
+    [dark]="dark"
+    [TodoList]="TodoList"
+    (addTodo)="updateTodos($event)"></app-form>
     <app-todo-list
-    [dark]="dark"></app-todo-list>
+    [dark]="dark"
+    [TodoList]="TodoList"></app-todo-list>
 </main>
