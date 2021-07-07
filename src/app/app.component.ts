@@ -34,4 +34,7 @@ export class AppComponent {
   updateTodos(todo: Todo) {
     this.TodoList = [...this.TodoList, todo]
   }
+  handleDelete(todo: Todo) {
+    this.TodoList = this.TodoList.filter(t=>t !== todo)
+  }
 }

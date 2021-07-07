@@ -9,6 +9,7 @@
     (addTodo)="updateTodos($event)"></app-form>
     <app-todo-list
     [dark]="dark"
-    [TodoList]="TodoList"></app-todo-list>
+    [TodoList]="TodoList"
+    (onDelete)="handleDelete($event)"></app-todo-list>
 </main>
 <div [attr.data-dark]="dark" class="background"></div>

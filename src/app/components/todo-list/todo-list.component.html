@@ -2,6 +2,7 @@
     <app-todo 
     *ngFor="let todo of TodoList" 
     [dark]="dark" 
-    [todo]="todo">
+    [todo]="todo"
+    (handleDelete)="handleDelete(todo)">
     </app-todo>
 </ul>

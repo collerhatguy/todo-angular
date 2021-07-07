@@ -1,3 +1,9 @@
-<li
+<div 
 [attr.data-dark]="dark"
->{{todo.todo}}</li>
+class="todo">
+    <li
+    [attr.data-dark]="dark"
+    >{{todo.todo}}</li>
+    <button
+    (click)="onDelete()">X</button>
+</div>

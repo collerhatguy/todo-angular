@@ -6,14 +6,23 @@
     background-color:   hsl(0, 0%, 98%);
     color: hsl(235, 19%, 35%);
 }
+.todo {
+    @include coloringDark();
+    &[data-dark="false"] {
+        @include coloringLight();
+    }
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    width: 100%;
+}
 li {
     @include coloringDark();
     list-style: none;
     outline: none;
     $checkbox-size: 50px;
     padding-left: $checkbox-size;
-    height: 300px;
-    width: 100%;
+    padding: 2rem;
     display: inline-block;
     border-bottom: 1px solid hsl(235, 19%, 35%);
     &[data-dark="false"] {

@@ -17,15 +17,21 @@ form {
     &[data-dark="false"] {
         @include coloringLight();
     }
-    &[data-dark="false"] input[type="text"], button {
+    &[data-dark="false"] input[type="text"] {
         @include coloringLight();
         &:focus {
             @include coloringLight();
         }
     }
+    &[data-dark="false"] button {
+        @include coloringLight();
+    }
 }
 button {
+    cursor: pointer;
     @include coloringDark();
+    border: none;
+    margin: 1rem;
 }
 input[type="text"] {
     @include coloringDark();
