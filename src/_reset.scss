@@ -47,4 +47,5 @@ table {
     box-sizing: border-box;
     max-width: 100%;
 	transition-duration: 500ms;
+	transition-timing-function: ease-in-out;
 }

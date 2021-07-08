@@ -1,15 +1,23 @@
 <app-header 
 [title]="title" 
 [dark]="dark"
-(onThemeChange)="changeTheme()"></app-header>
+(onThemeChange)="changeTheme()"
+></app-header>
 <main>
     <app-form
     [dark]="dark"
-    [TodoList]="TodoList"
-    (addTodo)="updateTodos($event)"></app-form>
+    (addTodo)="updateTodos($event)"
+    ></app-form>
     <app-todo-list
     [dark]="dark"
-    [TodoList]="TodoList"
-    (onDelete)="handleDelete($event)"></app-todo-list>
+    [TodoList]="shownTodoList"
+    (onDelete)="handleDelete($event)"
+    (onActive)="handleActive()"
+    (onAll)="handleAll()"
+    (onCompleted)="handleCompleted()"
+    ></app-todo-list>
 </main>
-<div [attr.data-dark]="dark" class="background"></div>
+<div 
+[attr.data-dark]="dark" 
+class="background"
+></div>

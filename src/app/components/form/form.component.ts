@@ -8,7 +8,6 @@ import Todo from "../../Todo";
 })
 export class FormComponent implements OnInit {
   @Input() dark: boolean = true;
-  @Input() TodoList!: Todo[];
   @Output() addTodo: EventEmitter<Todo> = new EventEmitter();
   todo: string = "";
   constructor() { }
@@ -19,7 +18,7 @@ export class FormComponent implements OnInit {
     if (!this.todo) return;
     const newTodo: Todo = {
       todo: this.todo,
-      id: Math.floor(Math.random() * 20),
+      id: Math.floor(Math.random() * 999999999),
       completed: false,
     }
     this.addTodo.emit(newTodo);

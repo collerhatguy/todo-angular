@@ -5,4 +5,11 @@
     [todo]="todo"
     (handleDelete)="handleDelete(todo)">
     </app-todo>
+    <app-todo-list-ux
+    [dark]="dark" 
+    [length]="TodoList.length"
+    (handleActive)="handleActive()"
+    (handleAll)="handleAll()"
+    (handleCompleted)="handleCompleted()"
+    ></app-todo-list-ux>
 </ul>

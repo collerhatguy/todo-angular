@@ -22,11 +22,19 @@ li {
     outline: none;
     $checkbox-size: 50px;
     padding-left: $checkbox-size;
-    padding: 2rem;
+    padding: 1rem;
     display: inline-block;
     border-bottom: 1px solid hsl(235, 19%, 35%);
     &[data-dark="false"] {
         @include coloringLight();
         border-bottom-color: hsl(234, 39%, 85%);
+    }
+}
+button {
+    @include coloringDark();
+    cursor: pointer;
+    border: none;
+    &[data-dark="false"] {
+        @include coloringLight();
     }
 }

@@ -1,0 +1,28 @@
+<div
+[attr.data-dark]="dark" 
+class="todo-ux">
+    <span
+    [attr.data-dark]="dark">
+       {{length}} item{{length > 1 ? "s" : ""}} left
+    </span>
+    <div 
+    [attr.data-dark]="dark"
+    class="todo-filter">
+        <button
+        [attr.data-dark]="dark"
+        (click)="allTodos()"
+        >All</button>
+        <button
+        [attr.data-dark]="dark"
+        (click)="activeTodos()"
+        >Active</button>
+        <button
+        [attr.data-dark]="dark"
+        (click)="completedTodos()"
+        >Completed</button>
+    </div>
+    <button
+    [attr.data-dark]="dark"
+    class="clear-btn"
+    >Clear Completed</button>
+</div>
