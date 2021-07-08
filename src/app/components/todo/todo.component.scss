@@ -15,15 +15,16 @@
 
 .todo {
     @include themeCombined();
+    width: 100%; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%; 
     border-bottom: 1px solid hsl(235, 19%, 35%);
     
 }
 li {
     @include themeCombined();
+    cursor: pointer;
     list-style: none;
     outline: none;
     padding-left: 30px;

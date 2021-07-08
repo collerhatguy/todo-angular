@@ -30,6 +30,7 @@
 .todo-filter {
     button {
         @include combineThemes();
+        font-weight: 900;
     }
 }
 button {
@@ -47,5 +48,10 @@ button {
     .todo-ux {
         flex-direction: column;
         align-items: center;
+    }
+}
+@media(max-width: 500px) {
+    .todo-filter {
+        display: none;
     }
 }

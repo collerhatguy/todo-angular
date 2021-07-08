@@ -17,6 +17,23 @@
     (onCompleted)="handleCompleted()"
     (onClear)="handleClear()"
     ></app-todo-list>
+
+    <div 
+    [attr.data-dark]="dark"
+    class="todo-filter">
+        <button
+        [attr.data-dark]="dark"
+        (click)="handleAll()"
+        >All</button>
+        <button
+        [attr.data-dark]="dark"
+        (click)="handleActive()"
+        >Active</button>
+        <button
+        [attr.data-dark]="dark"
+        (click)="handleCompleted()"
+        >Completed</button>
+    </div>
 </main>
 <div 
 [attr.data-dark]="dark" 

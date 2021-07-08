@@ -9,6 +9,7 @@ class="todo">
         ></div>
     </div>
     <li
+    (click)="onCheck()" 
     [attr.data-dark]="dark"
     [ngClass]="{ completed: todo.completed }"
     >{{todo.todo}}</li>
