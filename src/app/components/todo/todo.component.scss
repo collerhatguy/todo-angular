@@ -6,35 +6,65 @@
     background-color:   hsl(0, 0%, 98%);
     color: hsl(235, 19%, 35%);
 }
-.todo {
+@mixin themeCombined {
     @include coloringDark();
     &[data-dark="false"] {
         @include coloringLight();
     }
+}
+
+.completed-container {
+    $size: 30px;
+    width: $size;
+    height: $size;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.circle-check {
+    cursor: pointer;
+    width: 90%;
+    height: 90%;
+    border-radius: 100%;
+    border:hsl(235, 19%, 35%) solid 2px;
+    &.completed {
+        background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 5px;
+            background-image: url(../../../images/icon-check.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+}
+.todo {
+    @include themeCombined();
     display: flex;
     justify-content: space-evenly;
-    align-items: baseline;
-    width: 100%;
+    align-items: center;
+    width: 100%; 
+    border-bottom: 1px solid hsl(235, 19%, 35%);
+    
 }
 li {
-    @include coloringDark();
+    @include themeCombined();
     list-style: none;
     outline: none;
-    $checkbox-size: 50px;
-    padding-left: $checkbox-size;
+    padding-left: 30px;
     padding: 1rem;
     display: inline-block;
-    border-bottom: 1px solid hsl(235, 19%, 35%);
-    &[data-dark="false"] {
-        @include coloringLight();
-        border-bottom-color: hsl(234, 39%, 85%);
+    &.completed {
+        text-decoration: line-through;
+        color: hsl(235, 19%, 35%);
     }
+   
 }
 button {
-    @include coloringDark();
+    @include themeCombined();
     cursor: pointer;
     border: none;
-    &[data-dark="false"] {
-        @include coloringLight();
-    }
 }

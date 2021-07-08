@@ -1,10 +1,15 @@
 <div 
 [attr.data-dark]="dark"
 class="todo">
+    <div class="completed-container">
+        <div 
+        class="circle-check"
+        (click)="onCheck()" 
+        [ngClass]="{ completed: todo.completed }"
+        ></div>
+    </div>
     <li
     [attr.data-dark]="dark"
+    [ngClass]="{ completed: todo.completed }"
     >{{todo.todo}}</li>
-    <button
-    [attr.data-dark]="dark"
-    (click)="onDelete()">X</button>
 </div>

@@ -11,6 +11,7 @@ export class TodoListUxComponent implements OnInit {
   @Output() handleAll: EventEmitter<null> = new EventEmitter();
   @Output() handleCompleted: EventEmitter<null> = new EventEmitter();
   @Output() handleActive: EventEmitter<null> = new EventEmitter();
+  @Output() onClear: EventEmitter<null> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
@@ -24,6 +25,9 @@ export class TodoListUxComponent implements OnInit {
   }
   completedTodos() {
     this.handleCompleted.emit()
+  }
+  clearCompleted() {
+    this.onClear.emit();
   }
 
 }

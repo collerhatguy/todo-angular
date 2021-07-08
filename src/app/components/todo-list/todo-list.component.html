@@ -3,7 +3,7 @@
     *ngFor="let todo of TodoList" 
     [dark]="dark" 
     [todo]="todo"
-    (handleDelete)="handleDelete(todo)">
+    (handleCheck)="handleCheck(todo)">
     </app-todo>
     <app-todo-list-ux
     [dark]="dark" 
@@ -11,5 +11,6 @@
     (handleActive)="handleActive()"
     (handleAll)="handleAll()"
     (handleCompleted)="handleCompleted()"
+    (onClear)="clearCompleted()"
     ></app-todo-list-ux>
 </ul>

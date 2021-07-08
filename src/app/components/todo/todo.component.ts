@@ -9,11 +9,11 @@ import Todo from 'src/app/Todo';
 export class TodoComponent implements OnInit {
   @Input() todo!: Todo;
   @Input() dark!: boolean;
-  @Output() handleDelete: EventEmitter<Todo> = new EventEmitter();
+  @Output() handleCheck: EventEmitter<Todo> = new EventEmitter();
 
   constructor() { }
-  onDelete() {
-    this.handleDelete.emit()
+  onCheck() {
+    this.handleCheck.emit()
   }
   ngOnInit(): void {
   }

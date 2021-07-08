@@ -11,10 +11,11 @@
     <app-todo-list
     [dark]="dark"
     [TodoList]="shownTodoList"
-    (onDelete)="handleDelete($event)"
+    (onCheck)="handleCheck($event)"
     (onActive)="handleActive()"
     (onAll)="handleAll()"
     (onCompleted)="handleCompleted()"
+    (onClear)="handleClear()"
     ></app-todo-list>
 </main>
 <div 
