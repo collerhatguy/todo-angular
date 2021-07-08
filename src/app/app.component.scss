@@ -43,7 +43,7 @@ main {
         color:  hsl(220, 98%, 61%);
     }
 }
-.todo-filter {
+.todo-ux {
     @include combineThemes();
     display: flex;
     justify-content: space-evenly;
@@ -55,12 +55,12 @@ main {
     button {
         @include combineThemes();
         @include clickable();
-        font-weight: 900;
+        font-weight: 700;
         border: none;
     }
 }
 @media(min-width: 500px) {
-    .todo-filter {
+    .todo-ux {
         display: none;
     }
 }

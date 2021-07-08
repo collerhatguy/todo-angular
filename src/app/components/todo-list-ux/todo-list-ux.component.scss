@@ -30,8 +30,11 @@
 .todo-filter {
     button {
         @include combineThemes();
-        font-weight: 900;
+        font-weight: 700;
     }
+}
+.todo-count {
+    padding: 1rem
 }
 button {
     @include combineThemes();
