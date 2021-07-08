@@ -12,7 +12,7 @@ ul {
     margin: 1rem auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-direction: column;
     border-radius: 10px;
     &[data-dark="false"] {

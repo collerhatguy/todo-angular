@@ -17,9 +17,13 @@
     @include themeCombined();
     width: 100%; 
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    padding-left: 1rem;
     align-items: center;
     border-bottom: 1px solid hsl(235, 19%, 35%);
+    &:first-child {
+        border-radius: 10px 10px 0 0;
+    }
     
 }
 li {
