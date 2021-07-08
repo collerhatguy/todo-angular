@@ -1,15 +1,8 @@
 
 <form 
 [attr.data-dark]="dark" > 
-    <!-- <div class="checkbox-container">
-        <label for="check">
-            <input 
-            type="checkbox" 
-            name="check" 
-            id="check">
-        </label>
-    </div> -->
     <input
+    [attr.data-dark]="dark"
     placeholder="Create a new todo..." 
     type="text" 
     name="todo" 
@@ -17,6 +10,7 @@
     [(ngModel)]="todo" 
     />
     <button 
+    [attr.data-dark]="dark"
     (click)="createTodo()"
     type="submit">Submit</button>
 </form>

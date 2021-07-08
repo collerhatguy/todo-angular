@@ -63,8 +63,3 @@ li {
     }
    
 }
-button {
-    @include themeCombined();
-    cursor: pointer;
-    border: none;
-}
