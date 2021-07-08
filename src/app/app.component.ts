@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoService } from './services/todo.service';
 import Todo from "./Todo";
 
 @Component({
@@ -9,31 +10,17 @@ import Todo from "./Todo";
 export class AppComponent {
   title: string = 'TODO';
   dark: boolean = true;
-  TodoList: Todo[] = [
-      {
-        id: 1,
-        todo: "stuff",
-        completed: false
-      },
-      {
-        id: 1,
-        todo: "stuff",
-        completed: false
-      },
-      {
-        id: 1,
-        todo: "stuff",
-        completed: false
-      },
-  ];
+  TodoList: Todo[] = [];
   shownTodoList: Todo[] = this.TodoList;
-  constructor() {
+  constructor(private todoService: TodoService) {
+    this.TodoList = this.todoService.getTodos();
+    this.shownTodoList = this.todoService.getTodos();
   }
   changeTheme() {
     this.dark = !this.dark;
   }
   updateTodos(todo: Todo) {
-    this.TodoList = [...this.TodoList, todo];
+    this.TodoList = this.todoService.updateTodos(todo);
     this.shownTodoList = this.TodoList;
   }
   handleActive() {
@@ -46,17 +33,11 @@ export class AppComponent {
     this.shownTodoList = this.TodoList.filter(t => t.completed);
   }
   handleClear() {
-    this.TodoList = this.TodoList.filter(t => !t.completed);
+    this.TodoList = this.todoService.handleClear()
     this.shownTodoList = this.TodoList;
   }
   handleCheck(todo: Todo) {
-    this.TodoList = this.TodoList.map(t => {
-      if (t === todo) return {
-        ...t,
-        completed: !t.completed
-      }
-      return t;
-    })
+    this.TodoList = this.todoService.handleCheck(todo);
     this.shownTodoList = this.TodoList;
   }
  
