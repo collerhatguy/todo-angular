@@ -10,35 +10,32 @@ import Todo from "./Todo";
 export class AppComponent {
   title: string = 'TODO';
   dark: boolean = true;
-  TodoList: Todo[] = [];
-  shownTodoList: Todo[] = this.TodoList;
+  shownTodoList: Todo[] = [];
+
   constructor(private todoService: TodoService) {
-    this.TodoList = this.todoService.getTodos();
     this.shownTodoList = this.todoService.getTodos();
   }
+
   changeTheme() {
     this.dark = !this.dark;
   }
   updateTodos(todo: Todo) {
-    this.TodoList = this.todoService.updateTodos(todo);
-    this.shownTodoList = this.TodoList;
+    this.shownTodoList = this.todoService.updateTodos(todo);
   }
   handleActive() {
-    this.shownTodoList = this.TodoList.filter(t => !t.completed);
+    this.shownTodoList = this.todoService.getTodos().filter(t => !t.completed);
   }
   handleAll() {
-    this.shownTodoList = this.TodoList;
+    this.shownTodoList = this.todoService.getTodos();
   }
   handleCompleted() {
-    this.shownTodoList = this.TodoList.filter(t => t.completed);
+    this.shownTodoList = this.todoService.getTodos().filter(t => t.completed);
   }
   handleClear() {
-    this.TodoList = this.todoService.handleClear()
-    this.shownTodoList = this.TodoList;
+    this.shownTodoList = this.todoService.handleClear()
   }
   handleCheck(todo: Todo) {
-    this.TodoList = this.todoService.handleCheck(todo);
-    this.shownTodoList = this.TodoList;
+    this.shownTodoList = this.todoService.handleCheck(todo);
   }
  
 }
