@@ -1,12 +1,19 @@
 <div 
 [attr.data-dark]="dark"
 class="todo">
-    <div class="completed-container">
+    <div 
+    [attr.data-dark]="dark"
+    class="completed-container">
         <div 
-        class="circle-check"
-        (click)="onCheck()" 
-        [ngClass]="{ completed: todo.completed }"
-        ></div>
+        [attr.data-dark]="dark"
+        class="linear-border">
+            <div 
+            [attr.data-dark]="dark"
+            class="circle-check"
+            (click)="onCheck()" 
+            [ngClass]="{ completed: todo.completed }"
+            ></div>
+        </div>
     </div>
     <li
     (click)="onCheck()" 
