@@ -19,3 +19,8 @@ ul {
         @include coloringLight();
     }
 }
+@media(max-width: 750px) {
+    ul {
+        width: 90%;
+    }
+}

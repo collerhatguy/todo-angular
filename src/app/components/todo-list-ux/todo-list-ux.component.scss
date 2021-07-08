@@ -43,3 +43,9 @@ button {
 .clear-btn {
     @include clickable()
 }
+@media(max-width: 420px) {
+    .todo-ux {
+        flex-direction: column;
+        align-items: center;
+    }
+}

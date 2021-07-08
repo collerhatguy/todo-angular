@@ -30,3 +30,11 @@ header {
 #dark-btn[data-dark="false"] {
     background-image: url(../../../images/icon-sun.svg);
 }
+@media(max-width: 500px) {
+    header {
+        background-image: url(../../../images/bg-mobile-dark.jpg);
+        &[data-dark="false"] {
+            background-image: url(../../../images/bg-mobile-light.jpg);
+        }
+    }
+}

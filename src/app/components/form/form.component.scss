@@ -20,18 +20,29 @@ form {
     justify-content: start;
     align-items: center;
     height: 50px;
+    border-radius: 10px;
 }
 button {
     @include themeCombined();
+    width: min-content;
     cursor: pointer;
     border: none;
-    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
 }
-input[type="text"] {
+input {
     @include themeCombined();
+    font-size: 1rem;
     padding-left: 1rem;
     border: none;
     outline: none;
     height: 100%;
     width: 100%;
+    border-radius: 10px;
+}
+
+@media(max-width: 750px) {
+    form {
+        width: 90%;
+    }
 }

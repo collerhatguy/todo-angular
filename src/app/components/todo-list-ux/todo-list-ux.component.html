@@ -1,10 +1,11 @@
 <div
 [attr.data-dark]="dark" 
 class="todo-ux">
-    <span
+    <div
+    class="todo-count"
     [attr.data-dark]="dark">
        {{length}} item{{length > 1 ? "s" : ""}} left
-    </span>
+    </div>
     <div 
     [attr.data-dark]="dark"
     class="todo-filter">
