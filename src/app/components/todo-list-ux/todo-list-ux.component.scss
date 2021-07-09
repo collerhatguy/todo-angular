@@ -28,6 +28,9 @@
     border-radius: 0 0 5px 5px;
 }
 .todo-filter {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
     button {
         @include combineThemes();
         font-weight: 700;
