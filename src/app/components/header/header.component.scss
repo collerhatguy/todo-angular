@@ -1,40 +1,39 @@
 header {
-    background-image: url(../../../images/bg-desktop-dark.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 100%;
     height: 300px;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    &[data-dark="false"] {
-        background-image: url(../../../images/bg-desktop-light.jpg);
-    }
+    position: relative;
     h1 {
         font-size: 2rem;
         letter-spacing: 1rem;
+        z-index: 1;
     }
+}
+.background {
+    z-index: 0;
+    position: absolute;
+    height: 220px;
+    inset: 0;
+    width: 100%;
+} 
+#mobile {
+    display: none;
 }
 #dark-btn {
     cursor: pointer;
     $pic-size: 30px;
     width: $pic-size;
     height: $pic-size;
-    background-image: url(../../../images/icon-moon.svg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#dark-btn[data-dark="false"] {
-    background-image: url(../../../images/icon-sun.svg);
+    z-index: 1;
 }
 @media(max-width: 500px) {
-    header {
-        background-image: url(../../../images/bg-mobile-dark.jpg);
-        &[data-dark="false"] {
-            background-image: url(../../../images/bg-mobile-light.jpg);
-        }
+    #mobile {
+        display: flex;
+    }
+    #desktop {
+        display: none;
     }
 }

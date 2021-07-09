@@ -18,8 +18,8 @@
     width: 100%; 
     display: flex;
     justify-content: flex-start;
-    padding-left: 1rem;
     align-items: center;
+    padding-left: 1rem;
     border-bottom: 1px solid hsl(235, 19%, 35%);
     &:first-child {
         border-radius: 10px 10px 0 0;
@@ -76,15 +76,13 @@ li {
     border-radius: 100%;
     &.completed {
         background: linear-gradient(-45deg,hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-        position: relative;
-        &::after {
-            content: "";
-            position: absolute;
-            inset: 5px;
-            background-image: url(../../../images/icon-check.svg);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            $size: 80%;
+            width: $size;
+            height: $size;
         }
     }
 }

@@ -1,8 +1,13 @@
 <header
 [attr.data-dark]="dark" >
+    <img class="background" id="desktop"
+    src="{{dark ? 'assets/bg-desktop-dark.jpg' : 'assets/bg-desktop-light.jpg'}}" alt="">
+    <img class="background" id="mobile"
+    src="{{dark ? 'assets/bg-mobile-dark.jpg' : 'assets/bg-mobile-light.jpg'}}" alt="">
     <h1>{{title}}</h1>
-    <div 
+    <img
+    src="{{dark ? 'assets/icon-moon.svg' : 'assets/icon-sun.svg'}}"
     (click)="switchTheme()"
     [attr.data-dark]="dark" 
-    id="dark-btn"></div>
+    id="dark-btn" />
 </header>

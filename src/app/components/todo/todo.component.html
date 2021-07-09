@@ -11,8 +11,9 @@ class="todo">
             [attr.data-dark]="dark"
             class="circle-check"
             (click)="onCheck()" 
-            [ngClass]="{ completed: todo.completed }"
-            ></div>
+            [ngClass]="{ completed: todo.completed }">
+                <img src="{{todo.completed ? 'assets/icon-check.svg' : ''}}" alt="">
+            </div>
         </div>
     </div>
     <li
