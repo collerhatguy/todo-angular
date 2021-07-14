@@ -1,6 +1,6 @@
 <ul [attr.data-dark]="dark">
     <app-todo 
-    *ngFor="let todo of TodoList" 
+    *ngFor="let todo of TodoList; ngForTrackBy: trackTodo" 
     [dark]="dark" 
     [todo]="todo"
     (handleCheck)="handleCheck(todo)">

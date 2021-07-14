@@ -17,6 +17,7 @@ export class TodoListComponent implements OnInit {
   @Output() onCompleted: EventEmitter<any> = new EventEmitter()
   @Output() onClear: EventEmitter<any> = new EventEmitter()
 
+  
   constructor() { }
   
   handleActive() {
@@ -33,6 +34,9 @@ export class TodoListComponent implements OnInit {
   }
   clearCompleted() {
     this.onClear.emit();
+  }
+  trackTodo(index: number, todo: Todo ) {
+    return todo.id
   }
   ngOnInit(): void {
   }
