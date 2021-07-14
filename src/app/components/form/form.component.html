@@ -9,6 +9,7 @@
     id="todo-input"
     [(ngModel)]="todo" 
     />
+    <input *ngIf="todo" type="checkbox" name="urgency" id="urgency">
     <button 
     [attr.data-dark]="dark"
     (click)="createTodo()"
