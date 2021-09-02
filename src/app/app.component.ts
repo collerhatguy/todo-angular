@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TodoService } from './services/todo.service';
-import Todo from "./Todo";
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'body',
@@ -9,33 +9,31 @@ import Todo from "./Todo";
 })
 export class AppComponent {
   title: string = 'TODO';
-  dark: boolean = true;
-  shownTodoList: Todo[] = [];
+  dark$: Observable<boolean>;
 
-  constructor(private todoService: TodoService) {
-    this.shownTodoList = this.todoService.getTodos();
+  constructor(private store: Store<any>) {
   }
 
-  changeTheme() {
-    this.dark = !this.dark;
-  }
-  updateTodos(todo: Todo) {
-    this.shownTodoList = this.todoService.updateTodos(todo);
-  }
-  handleActive() {
-    this.shownTodoList = this.todoService.getTodos().filter(t => !t.completed);
-  }
-  handleAll() {
-    this.shownTodoList = this.todoService.getTodos();
-  }
-  handleCompleted() {
-    this.shownTodoList = this.todoService.getTodos().filter(t => t.completed);
-  }
-  handleClear() {
-    this.shownTodoList = this.todoService.handleClear()
-  }
-  handleCheck(todo: Todo) {
-    this.shownTodoList = this.todoService.handleCheck(todo);
-  }
+  // changeTheme() {
+  //   this.dark = !this.dark;
+  // }
+  // updateTodos(todo: Todo) {
+  //   this.shownTodoList = this.todoService.updateTodos(todo);
+  // }
+  // handleActive() {
+  //   this.shownTodoList = this.todoService.getTodos().filter(t => !t.completed);
+  // }
+  // handleAll() {
+  //   this.shownTodoList = this.todoService.getTodos();
+  // }
+  // handleCompleted() {
+  //   this.shownTodoList = this.todoService.getTodos().filter(t => t.completed);
+  // }
+  // handleClear() {
+  //   this.shownTodoList = this.todoService.handleClear()
+  // }
+  // handleCheck(todo: Todo) {
+  //   this.shownTodoList = this.todoService.handleCheck(todo);
+  // }
  
 }

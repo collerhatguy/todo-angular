@@ -1,5 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import Todo from "../../Todo";
+import { Component, Input, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import Todo from "../../interfaces/Todo";
 
 @Component({
   selector: 'app-todo-list',
@@ -8,33 +10,12 @@ import Todo from "../../Todo";
 })
 export class TodoListComponent implements OnInit {
 
-  @Input() TodoList: Todo[] = [];
   @Input() dark: boolean = true;
-  @Output() onDelete: EventEmitter<Todo> = new EventEmitter()
-  @Output() onCheck: EventEmitter<Todo> = new EventEmitter()
-  @Output() onActive: EventEmitter<any> = new EventEmitter()
-  @Output() onAll: EventEmitter<any> = new EventEmitter()
-  @Output() onCompleted: EventEmitter<any> = new EventEmitter()
-  @Output() onClear: EventEmitter<any> = new EventEmitter()
 
   
-  constructor() { }
+  constructor(private store: Store) { 
+  }
   
-  handleActive() {
-    this.onActive.emit();
-  }
-  handleAll() {
-    this.onAll.emit();
-  }
-  handleCompleted() {
-    this.onCompleted.emit();
-  }
-  handleCheck(todo: Todo) {
-    this.onCheck.emit(todo);
-  }
-  clearCompleted() {
-    this.onClear.emit();
-  }
   trackTodo(index: number, todo: Todo ) {
     return todo.id
   }

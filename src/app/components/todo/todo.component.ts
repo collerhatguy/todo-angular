@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import Todo from 'src/app/Todo';
+import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import Todo from "../../interfaces/Todo";
 
 @Component({
   selector: 'app-todo',
@@ -9,11 +10,10 @@ import Todo from 'src/app/Todo';
 export class TodoComponent implements OnInit {
   @Input() todo!: Todo;
   @Input() dark!: boolean;
-  @Output() handleCheck: EventEmitter<Todo> = new EventEmitter();
 
-  constructor() { }
+  constructor(private store: Store) { }
   onCheck() {
-    this.handleCheck.emit()
+    this.store.dispatch()
   }
   ngOnInit(): void {
   }
