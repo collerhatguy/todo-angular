@@ -15,7 +15,6 @@ export class HeaderComponent implements OnInit {
   constructor(private store: Store) { }
 
   handleClick() {
-    debugger
     this.store.dispatch(switchTheme())
   }
   ngOnInit(): void {

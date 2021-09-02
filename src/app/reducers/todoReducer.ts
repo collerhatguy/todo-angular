@@ -8,35 +8,43 @@ interface Todos {
 }
 
 export const initialTodos: Todos = {
-    allTodos: [],
-    shownTodos: []
+    allTodos: JSON.parse(localStorage.getItem("jacobs.todos") || "[]"),
+    shownTodos: JSON.parse(localStorage.getItem("jacobs.todos") || "[]"),
 }
 
-const _todoReducer = createReducer(
+const todoReducer = createReducer(
     initialTodos,
-    on(addTodo, (state, action) => ({ 
-        ...state, 
-        allTodos: [...state.allTodos, action.payload],
-        shownTodos: [...state.allTodos, action.payload],
-    })),
-    on(checkTodo, (state, action) => ({ 
-        ...state, 
-        allTodos: state.allTodos.map(t => 
+    on(addTodo, (state, action) => { 
+        const newTodos = [...state.allTodos, action.payload]
+        localStorage.setItem("jacobs.todos", JSON.stringify(newTodos))
+        return {
+            ...state, 
+            allTodos: newTodos,
+            shownTodos: newTodos,
+        }
+    }),
+    on(checkTodo, (state, action) => {
+        const newTodos = state.allTodos.map(t => 
             t.id === action.payload ? { ...t, completed: !t.completed} : t
-        ), 
-        shownTodos: state.allTodos.map(t => 
-            t.id === action.payload ? { ...t, completed: !t.completed} : t
-        )    
-    })),
-    on(clearTodos, (state) => ({ 
-        ...state, 
-        allTodos: state.allTodos.filter(t => 
+        )
+        localStorage.setItem("jacobs.todos", JSON.stringify(newTodos))
+        return {
+            ...state, 
+            allTodos: newTodos, 
+            shownTodos: newTodos    
+        } 
+    }),
+    on(clearTodos, (state) => {
+        const newTodos = state.allTodos.filter(t => 
             !t.completed
-        ),
-        shownTodos: state.allTodos.filter(t => 
-            !t.completed
-        ),
-    })),
+        )
+        localStorage.setItem("jacobs.todos", JSON.stringify(newTodos))
+        return {
+            ...state, 
+            allTodos: newTodos,
+            shownTodos: newTodos
+        } 
+    }),
     on(selectAllTodos, (state) => ({ 
         ...state, 
         shownTodos: state.allTodos
@@ -55,4 +63,4 @@ const _todoReducer = createReducer(
     })),
 )
 
-export default _todoReducer; 
+export default todoReducer; 
