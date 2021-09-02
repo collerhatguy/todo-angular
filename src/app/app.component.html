@@ -1,41 +1,33 @@
 <app-header 
+*ngIf="dark$ |async as dark"
 [title]="title" 
 [dark]="dark"
-(onThemeChange)="changeTheme()"
 ></app-header>
-<main>
+<main *ngIf="dark$ | async as dark">
     <app-form
     [dark]="dark"
-    (addTodo)="updateTodos($event)"
     ></app-form>
     <app-todo-list
     [dark]="dark"
-    [TodoList]="shownTodoList"
-    (onCheck)="handleCheck($event)"
-    (onActive)="handleActive()"
-    (onAll)="handleAll()"
-    (onCompleted)="handleCompleted()"
-    (onClear)="handleClear()"
     ></app-todo-list>
-
     <div 
     [attr.data-dark]="dark"
     class="todo-ux">
         <button
         [attr.data-dark]="dark"
-        (click)="handleAll()"
+        (click)="allTodos()"
         >All</button>
         <button
         [attr.data-dark]="dark"
-        (click)="handleActive()"
+        (click)="activeTodos()"
         >Active</button>
         <button
         [attr.data-dark]="dark"
-        (click)="handleCompleted()"
+        (click)="completedTodos()"
         >Completed</button>
     </div>
 </main>
-<div 
+<div *ngIf="dark$ | async as dark"
 [attr.data-dark]="dark" 
 class="background"
 ></div>

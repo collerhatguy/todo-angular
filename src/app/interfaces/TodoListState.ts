@@ -1,7 +1,8 @@
 import Todo from "./Todo";
 
-interface TodoListState {
-    shownTodoList: Todo[]
+interface Todos {
+    allTodos: Todo[],
+    shownTodos: Todo[]
 }
 
-export default TodoListState 
+export default Todos

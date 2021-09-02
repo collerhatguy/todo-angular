@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { selectAllTodos, selectUncompletedTodos, selectCompletedTodos, clearTodos } from "./actions/todoActions";
 
 @Component({
   selector: 'body',
@@ -11,29 +12,21 @@ export class AppComponent {
   title: string = 'TODO';
   dark$: Observable<boolean>;
 
-  constructor(private store: Store<any>) {
+  constructor(private store: Store<{ dark: boolean }>) {
+    this.dark$ = store.pipe(select("dark"))
   }
 
-  // changeTheme() {
-  //   this.dark = !this.dark;
-  // }
-  // updateTodos(todo: Todo) {
-  //   this.shownTodoList = this.todoService.updateTodos(todo);
-  // }
-  // handleActive() {
-  //   this.shownTodoList = this.todoService.getTodos().filter(t => !t.completed);
-  // }
-  // handleAll() {
-  //   this.shownTodoList = this.todoService.getTodos();
-  // }
-  // handleCompleted() {
-  //   this.shownTodoList = this.todoService.getTodos().filter(t => t.completed);
-  // }
-  // handleClear() {
-  //   this.shownTodoList = this.todoService.handleClear()
-  // }
-  // handleCheck(todo: Todo) {
-  //   this.shownTodoList = this.todoService.handleCheck(todo);
-  // }
- 
+
+  allTodos() {
+    this.store.dispatch(selectAllTodos())
+  }
+  activeTodos() {
+    this.store.dispatch(selectCompletedTodos())
+  }
+  completedTodos() {
+    this.store.dispatch(selectUncompletedTodos())
+  }
+  clearCompleted() {
+    this.store.dispatch(clearTodos())
+  }
 }

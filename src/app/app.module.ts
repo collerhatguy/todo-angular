@@ -11,6 +11,7 @@ import { TodoListUxComponent } from './components/todo-list-ux/todo-list-ux.comp
 import { StoreModule } from '@ngrx/store';
 
 import themeReducer from './reducers/themeReducer';
+import todoReducer from './reducers/todoReducer';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import themeReducer from './reducers/themeReducer';
   imports: [
     BrowserModule, 
     FormsModule, 
-    StoreModule.forRoot({ dark: themeReducer }, {})
+    StoreModule.forRoot({ dark: themeReducer, todos: todoReducer }, {})
   ],
   providers: [],
   bootstrap: [AppComponent]

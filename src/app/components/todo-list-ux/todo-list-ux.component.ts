@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { clearTodos, selectCompletedTodos, selectAllTodos, selectUncompletedTodos } from "src/app/actions/todoActions"
 
 @Component({
   selector: 'app-todo-list-ux',
@@ -8,26 +10,23 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class TodoListUxComponent implements OnInit {
   @Input() length!: number;
   @Input() dark!: boolean;
-  @Output() handleAll: EventEmitter<null> = new EventEmitter();
-  @Output() handleCompleted: EventEmitter<null> = new EventEmitter();
-  @Output() handleActive: EventEmitter<null> = new EventEmitter();
-  @Output() onClear: EventEmitter<null> = new EventEmitter();
-  constructor() { }
+
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
   }
 
   allTodos() {
-    this.handleAll.emit()
+    this.store.dispatch(selectAllTodos())
   }
   activeTodos() {
-    this.handleActive.emit()
+    this.store.dispatch(selectCompletedTodos())
   }
   completedTodos() {
-    this.handleCompleted.emit()
+    this.store.dispatch(selectUncompletedTodos())
   }
   clearCompleted() {
-    this.onClear.emit();
+    this.store.dispatch(clearTodos())
   }
 
 }

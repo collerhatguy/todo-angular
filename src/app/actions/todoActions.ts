@@ -11,4 +11,4 @@ export const selectAllTodos = createAction("SELECT_ALL_TODOS")
 
 export const selectCompletedTodos = createAction("SELECT_COMPLETED_TODOS")
 
-export const selectUncomlpetedTodos = createAction("SELECT_UNCOMPLETED_TODOS")
+export const selectUncompletedTodos = createAction("SELECT_UNCOMPLETED_TODOS")

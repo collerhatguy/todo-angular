@@ -1,16 +1,11 @@
-<ul [attr.data-dark]="dark">
+<ul [attr.data-dark]="dark" *ngIf="shownTodos$ | async as todos">
     <app-todo 
-    *ngFor="let todo of TodoList; ngForTrackBy: trackTodo" 
+    *ngFor="let todo of todos; ngForTrackBy: trackTodo" 
     [dark]="dark" 
     [todo]="todo"
-    (handleCheck)="handleCheck(todo)">
-    </app-todo>
+    ></app-todo>
     <app-todo-list-ux
     [dark]="dark" 
-    [length]="TodoList.length"
-    (handleActive)="handleActive()"
-    (handleAll)="handleAll()"
-    (handleCompleted)="handleCompleted()"
-    (onClear)="clearCompleted()"
+    [length]="todos.length"
     ></app-todo-list-ux>
 </ul>
