@@ -13,7 +13,7 @@ main {
     inset: 0;
     z-index: -1;
     background-color: hsl(235, 21%, 11%);
-    &[data-dark="false"] {
+    &[data-theme="light"] {
         background-color: hsl(236, 33%, 92%);
     }
 }
@@ -33,7 +33,7 @@ main {
 }
 @mixin combineThemes {
     @include coloringDark();
-    &[data-dark="false"] {
+    &[data-theme="light"] {
         @include coloringLight();
     }    
 }

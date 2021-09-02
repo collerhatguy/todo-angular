@@ -14,7 +14,7 @@
 }
 @mixin combineThemes {
     @include coloringDark();
-    &[data-dark="false"] {
+    &[data-theme="light"] {
         @include coloringLight();
     }    
 }

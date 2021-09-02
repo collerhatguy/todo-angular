@@ -1,14 +1,14 @@
 <div 
-[attr.data-dark]="dark"
+[attr.data-theme]="theme"
 class="todo">
     <div 
-    [attr.data-dark]="dark"
+    [attr.data-theme]="theme"
     class="completed-container">
         <div 
-        [attr.data-dark]="dark"
+        [attr.data-theme]="theme"
         class="linear-border">
             <div 
-            [attr.data-dark]="dark"
+            [attr.data-theme]="theme"
             class="circle-check"
             (click)="onCheck()" 
             [ngClass]="{ completed: todo.completed }">
@@ -18,7 +18,7 @@ class="todo">
     </div>
     <li
     (click)="onCheck()" 
-    [attr.data-dark]="dark"
+    [attr.data-theme]="theme"
     [ngClass]="{ completed: todo.completed }"
     >{{todo.todo}}</li>
 </div>

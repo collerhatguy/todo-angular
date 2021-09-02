@@ -8,7 +8,7 @@
 }
 @mixin themeCombined {
     @include coloringDark();
-    &[data-dark="false"] {
+    &[data-theme="light"] {
         @include coloringLight();
     }
 }

@@ -10,10 +10,10 @@ import { selectAllTodos, selectUncompletedTodos, selectCompletedTodos, clearTodo
 })
 export class AppComponent {
   title: string = 'TODO';
-  dark$: Observable<boolean>;
+  theme$: Observable<string>;
 
-  constructor(private store: Store<{ dark: boolean }>) {
-    this.dark$ = store.pipe(select("dark"))
+  constructor(private store: Store<{ dark: string }>) {
+    this.theme$ = store.pipe(select("dark"))
   }
 
   allTodos() {

@@ -1,13 +1,13 @@
 <header
-[attr.data-dark]="dark" >
+[attr.data-theme]="theme" >
     <img class="background" id="desktop"
-    src="{{dark ? 'assets/bg-desktop-dark.jpg' : 'assets/bg-desktop-light.jpg'}}" alt="">
+    src="{{theme === 'dark' ? 'assets/bg-desktop-dark.jpg' : 'assets/bg-desktop-light.jpg'}}" alt="">
     <img class="background" id="mobile"
-    src="{{dark ? 'assets/bg-mobile-dark.jpg' : 'assets/bg-mobile-light.jpg'}}" alt="">
+    src="{{theme === 'dark' ? 'assets/bg-mobile-dark.jpg' : 'assets/bg-mobile-light.jpg'}}" alt="">
     <h1>{{title}}</h1>
     <img
-    src="{{dark ? 'assets/icon-moon.svg' : 'assets/icon-sun.svg'}}"
+    src="{{theme === 'dark' ? 'assets/icon-moon.svg' : 'assets/icon-sun.svg'}}"
     (click)="handleClick()"
-    [attr.data-dark]="dark" 
+    [attr.data-theme]="theme" 
     id="dark-btn" />
 </header>

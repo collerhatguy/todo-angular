@@ -10,11 +10,12 @@ import switchTheme from 'src/app/actions/themeActions';
 
 export class HeaderComponent implements OnInit {
   @Input() title: string = "";
-  @Input() dark: boolean = true;
+  @Input() theme: string = "dark";
 
   constructor(private store: Store) { }
 
   handleClick() {
+    debugger
     this.store.dispatch(switchTheme())
   }
   ngOnInit(): void {

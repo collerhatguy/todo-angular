@@ -9,7 +9,7 @@ import { addTodo } from 'src/app/actions/todoActions';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  @Input() dark: boolean = true;
+  @Input() theme: string = "dark";
   todo: string = "";
   constructor(private store: Store) { }
 

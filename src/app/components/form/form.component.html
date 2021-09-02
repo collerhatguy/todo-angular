@@ -1,8 +1,8 @@
 
 <form 
-[attr.data-dark]="dark" > 
+[attr.data-theme]="theme" > 
     <input
-    [attr.data-dark]="dark"
+    [attr.data-theme]="theme"
     placeholder="Create a new todo..." 
     type="text" 
     name="todo" 
@@ -10,7 +10,7 @@
     [(ngModel)]="todo" 
     />
     <button 
-    [attr.data-dark]="dark"
+    [attr.data-theme]="theme"
     (click)="createTodo()"
     type="submit">Submit</button>
 </form>

@@ -15,7 +15,7 @@ ul {
     align-items: stretch;
     flex-direction: column;
     border-radius: 10px;
-    &[data-dark="false"] {
+    &[data-theme="light"] {
         @include coloringLight();
     }
 }

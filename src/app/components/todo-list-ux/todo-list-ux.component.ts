@@ -9,7 +9,7 @@ import { clearTodos, selectCompletedTodos, selectAllTodos, selectUncompletedTodo
 })
 export class TodoListUxComponent implements OnInit {
   @Input() length!: number;
-  @Input() dark!: boolean;
+  @Input() theme!: string;
 
   constructor(private store: Store) { }
 

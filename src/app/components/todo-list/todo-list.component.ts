@@ -11,7 +11,7 @@ import Todos from 'src/app/interfaces/TodoListState';
 })
 export class TodoListComponent implements OnInit {
 
-  @Input() dark: boolean = true;
+  @Input() theme: string = "dark";
   shownTodos$: Observable<Todos>
 
   

@@ -1,29 +1,29 @@
 <div
-[attr.data-dark]="dark" 
+[attr.data-theme]="theme" 
 class="todo-ux">
     <div
     class="todo-count"
-    [attr.data-dark]="dark">
+    [attr.data-theme]="theme">
        {{length}} item{{length === 1 ? "" : "s"}} left
     </div>
     <div 
-    [attr.data-dark]="dark"
+    [attr.data-theme]="theme"
     class="todo-filter">
         <button
-        [attr.data-dark]="dark"
+        [attr.data-theme]="theme"
         (click)="allTodos()"
         >All</button>
         <button
-        [attr.data-dark]="dark"
+        [attr.data-theme]="theme"
         (click)="activeTodos()"
         >Active</button>
         <button
-        [attr.data-dark]="dark"
+        [attr.data-theme]="theme"
         (click)="completedTodos()"
         >Completed</button>
     </div>
     <button
-    [attr.data-dark]="dark"
+    [attr.data-theme]="theme"
     class="clear-btn"
     (click)="clearCompleted()"
     >Clear Completed</button>

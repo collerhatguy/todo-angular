@@ -10,11 +10,10 @@ import { checkTodo } from 'src/app/actions/todoActions';
 })
 export class TodoComponent implements OnInit {
   @Input() todo!: Todo;
-  @Input() dark!: boolean;
+  @Input() theme!: string;
 
   constructor(private store: Store) { }
   onCheck() {
-    debugger
     this.store.dispatch(checkTodo({ payload: this.todo.id}))
   }
   ngOnInit(): void {
