@@ -12,11 +12,11 @@ import Todos from 'src/app/interfaces/TodoListState';
 export class TodoListComponent implements OnInit {
 
   @Input() dark: boolean = true;
-  shownTodos$: Observable<Todo[]>
+  shownTodos$: Observable<Todos>
 
   
-  constructor(private store: Store<Todos>) {
-    this.shownTodos$ = store.pipe(select("shownTodos"))
+  constructor(private store: Store<{ todos: Todos}>) {
+    this.shownTodos$ = this.store.pipe(select("todos"))
   }
   
   trackTodo(index: number, todo: Todo ) {

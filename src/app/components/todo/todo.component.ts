@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import Todo from "../../interfaces/Todo";
+import { checkTodo } from 'src/app/actions/todoActions';
 
 @Component({
   selector: 'app-todo',
@@ -13,7 +14,8 @@ export class TodoComponent implements OnInit {
 
   constructor(private store: Store) { }
   onCheck() {
-    this.store.dispatch()
+    debugger
+    this.store.dispatch(checkTodo({ payload: this.todo.id}))
   }
   ngOnInit(): void {
   }

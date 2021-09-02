@@ -1,5 +1,5 @@
 <app-header 
-*ngIf="dark$ |async as dark"
+*ngIf="dark$ | async as dark"
 [title]="title" 
 [dark]="dark"
 ></app-header>
@@ -27,7 +27,8 @@
         >Completed</button>
     </div>
 </main>
-<div *ngIf="dark$ | async as dark"
+<div 
+*ngIf="dark$ | async as dark"
 [attr.data-dark]="dark" 
 class="background"
 ></div>

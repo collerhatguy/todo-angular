@@ -1,11 +1,11 @@
 <ul [attr.data-dark]="dark" *ngIf="shownTodos$ | async as todos">
     <app-todo 
-    *ngFor="let todo of todos; ngForTrackBy: trackTodo" 
+    *ngFor="let todo of todos.shownTodos; ngForTrackBy: trackTodo" 
     [dark]="dark" 
     [todo]="todo"
     ></app-todo>
     <app-todo-list-ux
     [dark]="dark" 
-    [length]="todos.length"
+    [length]="todos.shownTodos.length"
     ></app-todo-list-ux>
 </ul>

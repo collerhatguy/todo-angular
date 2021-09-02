@@ -16,16 +16,16 @@ const _todoReducer = createReducer(
     initialTodos,
     on(addTodo, (state, action) => ({ 
         ...state, 
-        allTodos: [...state.allTodos, action],
-        shownTodos: [...state.allTodos, action],
+        allTodos: [...state.allTodos, action.payload],
+        shownTodos: [...state.allTodos, action.payload],
     })),
     on(checkTodo, (state, action) => ({ 
         ...state, 
         allTodos: state.allTodos.map(t => 
-            t.id === action ? { ...t, completed: !t.completed} : t
+            t.id === action.payload ? { ...t, completed: !t.completed} : t
         ), 
         shownTodos: state.allTodos.map(t => 
-            t.id === action ? { ...t, completed: !t.completed} : t
+            t.id === action.payload ? { ...t, completed: !t.completed} : t
         )    
     })),
     on(clearTodos, (state) => ({ 
@@ -44,13 +44,13 @@ const _todoReducer = createReducer(
     on(selectCompletedTodos, (state) => ({ 
         ...state, 
         shownTodos: state.allTodos.filter(t =>
-            t.completed  
+            !t.completed  
         )
     })),
     on(selectUncompletedTodos, (state) => ({ 
         ...state, 
         shownTodos: state.allTodos.filter(t =>
-            !t.completed    
+            t.completed    
         )
     })),
 )

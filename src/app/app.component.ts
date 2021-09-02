@@ -16,7 +16,6 @@ export class AppComponent {
     this.dark$ = store.pipe(select("dark"))
   }
 
-
   allTodos() {
     this.store.dispatch(selectAllTodos())
   }

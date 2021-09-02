@@ -7,13 +7,15 @@ import switchTheme from 'src/app/actions/themeActions';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+
 export class HeaderComponent implements OnInit {
   @Input() title: string = "";
   @Input() dark: boolean = true;
 
   constructor(private store: Store) { }
 
-  switchTheme() {
+  handleClick() {
+    debugger
     this.store.dispatch(switchTheme())
   }
   ngOnInit(): void {

@@ -1,5 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import Todo from "../../Todo";
+import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import Todo from "../../interfaces/Todo";
+import { addTodo } from 'src/app/actions/todoActions';
 
 @Component({
   selector: 'app-form',
@@ -8,20 +10,19 @@ import Todo from "../../Todo";
 })
 export class FormComponent implements OnInit {
   @Input() dark: boolean = true;
-  @Output() addTodo: EventEmitter<Todo> = new EventEmitter();
   todo: string = "";
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
   }
   createTodo() {
-    if (!this.todo) return;
+    if (!this.todo.trim()) return;
     const newTodo: Todo = {
       todo: this.todo,
-      id: Math.floor(Math.random() * 999999999),
+      id: Date.now(),
       completed: false,
     }
-    this.addTodo.emit(newTodo);
+    this.store.dispatch(addTodo({ payload: newTodo }))
     this.todo = "";
   }
 }

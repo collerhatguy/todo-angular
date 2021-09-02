@@ -7,7 +7,7 @@
     <h1>{{title}}</h1>
     <img
     src="{{dark ? 'assets/icon-moon.svg' : 'assets/icon-sun.svg'}}"
-    (click)="switchTheme()"
+    (click)="handleClick()"
     [attr.data-dark]="dark" 
     id="dark-btn" />
 </header>
