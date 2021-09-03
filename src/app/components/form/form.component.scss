@@ -1,19 +1,7 @@
-@mixin coloringDark {
-    background-color:  hsl(235, 24%, 19%);
-    color: hsl(234, 39%, 85%);
-}
-@mixin coloringLight {
-    background-color:  hsl(0, 0%, 98%);
-    color: hsl(235, 19%, 35%);
-}
-@mixin themeCombined {
-    @include coloringDark();
-    &[data-theme="light"] {
-        @include coloringLight();
-    }
-}
+@import "../../themes";
+
 form {
-    @include themeCombined();
+    @include combineThemes();
     width: 50%;
     margin: 0 auto;
     display: flex;
@@ -23,7 +11,8 @@ form {
     border-radius: 10px;
 }
 button {
-    @include themeCombined();
+    @include combineThemes();
+    @include clickable();
     width: min-content;
     cursor: pointer;
     border: none;
@@ -31,7 +20,7 @@ button {
     border-radius: 10px;
 }
 input {
-    @include themeCombined();
+    @include combineThemes();
     font-size: 1rem;
     padding-left: 1rem;
     border: none;

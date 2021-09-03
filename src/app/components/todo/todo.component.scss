@@ -1,20 +1,7 @@
-@mixin coloringDark {
-    background-color:  hsl(235, 24%, 19%);
-    color: hsl(234, 39%, 85%);
-}
-@mixin coloringLight {
-    background-color:   hsl(0, 0%, 98%);
-    color: hsl(235, 19%, 35%);
-}
-@mixin themeCombined {
-    @include coloringDark();
-    &[data-theme="light"] {
-        @include coloringLight();
-    }
-}
+@import "../../themes";
 
 .todo {
-    @include themeCombined();
+    @include combineThemes();
     width: 100%; 
     display: flex;
     justify-content: flex-start;
@@ -27,7 +14,7 @@
     
 }
 li {
-    @include themeCombined();
+    @include combineThemes();
     cursor: pointer;
     list-style: none;
     outline: none;
@@ -50,7 +37,7 @@ li {
     align-items: center;
 }
 .linear-border {
-    @include themeCombined();
+    @include combineThemes();
     $size: 100%;
     width: $size;
     height: $size;
@@ -68,7 +55,7 @@ li {
     }
 }
 .circle-check {
-    @include themeCombined();
+    @include combineThemes();
     cursor: pointer;
     $size: 90%;
     width: $size;

@@ -1,13 +1,7 @@
-@mixin coloringDark {
-    background-color:  hsl(235, 24%, 19%);
-    color: hsl(234, 39%, 85%);
-}
-@mixin coloringLight {
-    background-color:   hsl(0, 0%, 98%);
-    color: hsl(235, 19%, 35%);
-}
+@import "../../themes";
+
 ul {
-    @include coloringDark();
+    @include combineThemes();
     width: 50%;
     margin: 1rem auto;
     display: flex;
@@ -15,9 +9,6 @@ ul {
     align-items: stretch;
     flex-direction: column;
     border-radius: 10px;
-    &[data-theme="light"] {
-        @include coloringLight();
-    }
 }
 @media(max-width: 750px) {
     ul {

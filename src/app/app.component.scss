@@ -1,3 +1,5 @@
+@import "./themes";
+
 main {
     position: absolute;
     top: 200px;
@@ -15,32 +17,6 @@ main {
     background-color: hsl(235, 21%, 11%);
     &[data-theme="light"] {
         background-color: hsl(236, 33%, 92%);
-    }
-}
-@mixin coloringDark {
-    background-color:  hsl(235, 24%, 19%);
-    color: hsl(234, 39%, 85%);
-}
-@mixin coloringLight {
-    background-color:   hsl(0, 0%, 98%);
-    color: hsl(235, 19%, 35%);
-}
-@mixin clickable {
-    &:focus, &:hover {
-        cursor: pointer;
-        color:  hsl(220, 98%, 61%);
-    }
-}
-@mixin combineThemes {
-    @include coloringDark();
-    &[data-theme="light"] {
-        @include coloringLight();
-    }    
-}
-@mixin clickable {
-    &:focus, &:hover {
-        cursor: pointer;
-        color:  hsl(220, 98%, 61%);
     }
 }
 .todo-ux {
