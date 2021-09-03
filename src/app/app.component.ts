@@ -12,8 +12,8 @@ export class AppComponent {
   title: string = 'TODO';
   theme$: Observable<string>;
 
-  constructor(private store: Store<{ dark: string }>) {
-    this.theme$ = store.pipe(select("dark"))
+  constructor(private store: Store<{ theme: string }>) {
+    this.theme$ = store.pipe(select("theme"))
   }
 
   allTodos() {

@@ -25,7 +25,7 @@ import todoReducer from './reducers/todoReducer';
   imports: [
     BrowserModule, 
     FormsModule, 
-    StoreModule.forRoot({ dark: themeReducer, todos: todoReducer }, {})
+    StoreModule.forRoot({ theme: themeReducer, todos: todoReducer }, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
